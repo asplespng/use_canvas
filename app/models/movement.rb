@@ -3,6 +3,8 @@ class Movement < ApplicationRecord
 
   scope :by_name, -> { order(:name) }
 
+  validates :kind, inclusion: {in: Movement.kinds}
+
   def display_name
     name.titleize
   end
