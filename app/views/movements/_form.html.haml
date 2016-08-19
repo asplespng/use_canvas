@@ -1,0 +1,10 @@
+= simple_form_for(@movement) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :kind, collection: Movement.kinds.keys, label_method: 'humanize'
+
+  .form-actions
+    = f.button :submit

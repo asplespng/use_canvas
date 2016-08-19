@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @movement.name
+%p
+  %b Description:
+  = @movement.description
+%p
+  %b Kind:
+  = @movement.kind
+
+= link_to 'Edit', edit_movement_path(@movement)
+\|
+= link_to 'Back', movements_path
