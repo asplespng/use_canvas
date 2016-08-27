@@ -5,6 +5,7 @@
     = f.input :name
     = f.input :description
     = f.input :kind, collection: Movement.kinds.keys, label_method: 'humanize'
+    = f.input :created_at, as: :date_picker
 
   .form-actions
     = f.button :submit

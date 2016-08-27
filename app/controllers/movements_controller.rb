@@ -53,6 +53,6 @@ class MovementsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def movement_params
-      params.require(:movement).permit(:name, :description, :kind)
+      params.require(:movement).permit(:name, :description, :kind, :created_at)
     end
 end
