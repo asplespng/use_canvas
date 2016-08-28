@@ -6,6 +6,7 @@ class DatePickerInput < SimpleForm::Inputs::StringInput
     options = {
       value: value.nil? ? nil : value.strftime("%Y-%m-%d"),
       data: { behaviour: 'datepicker' }  # for example
+      # setDate: value.strftime("%m/%d%Y")
     }
     # add all html option you need...
     super.merge options
@@ -13,7 +14,7 @@ class DatePickerInput < SimpleForm::Inputs::StringInput
 
   # Adds the "datepicker" class to the input element
   def input_html_classes
-    super.push('datepicker')
+    super.push('datepicker form-control')
   end
 
   # Builds the input text field and an hidden field with class attribute_name-alt
