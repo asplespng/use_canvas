@@ -14,12 +14,20 @@ class DatePickerInput < SimpleForm::Inputs::StringInput
 
   # Adds the "datepicker" class to the input element
   def input_html_classes
-    super.push('datepicker form-control')
+    super.push('form-control datepicker')
   end
 
   # Builds the input text field and an hidden field with class attribute_name-alt
   def input(wrapper_options)
-    @builder.text_field(attribute_name, input_html_options) + \
-    @builder.hidden_field(attribute_name, value: input_html_options[:value], class: attribute_name.to_s + "-alt")
+    template.content_tag(:div, class: "input-group") do
+      template.concat @builder.text_field(attribute_name, input_html_options)
+      template.concat template.content_tag(:span, class: 'input-group-addon'){icon_table}
+      template.concat @builder.hidden_field(attribute_name, value: input_html_options[:value], class: attribute_name.to_s + "-alt")
+    end
+  end
+
+
+  def icon_table
+    "<i class='glyphicon glyphicon-th'></i>".html_safe
   end
 end
