@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Canvas key:
+  = @canvase.canvas_key
+%p
+  %b Canvas title:
+  = @canvase.canvas_title
+%p
+  %b Canvas created:
+  = @canvase.canvas_created
+%p
+  %b Canvas updated:
+  = @canvase.canvas_updated
+
+= link_to 'Edit', edit_canvase_path(@canvase)
+\|
+= link_to 'Back', canvases_path

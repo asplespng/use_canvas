@@ -1,0 +1,11 @@
+= simple_form_for(@canvase) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :canvas_key
+    = f.input :canvas_title
+    = f.input :canvas_created
+    = f.input :canvas_updated
+
+  .form-actions
+    = f.button :submit

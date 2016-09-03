@@ -5,7 +5,8 @@ class DatePickerInput < SimpleForm::Inputs::StringInput
     value = object.send(attribute_name)
     options = {
       value: value.nil? ? nil : value.strftime("%Y-%m-%d"),
-      data: { behaviour: 'datepicker' }  # for example
+      data: { behaviour: 'datepicker' },  # for example
+      autoOpen: "false"
       # setDate: value.strftime("%m/%d%Y")
     }
     # add all html option you need...

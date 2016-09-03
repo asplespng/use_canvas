@@ -111,13 +111,15 @@
 	background-color: #fff;
 	cursor: default;
 }
-// .ui-datepicker {
-//   width: 99%;
-//   padding: 0;
-// }
-// .ui-widget {
-//   font-size: 0.9em;
-// }
-// .ui-datepicker table {
-//   font-size: 0.7em;
-// }
+@media screen and (max-width: 440px) and (-webkit-max-device-pixel-ratio: 3) {
+  .ui-datepicker {
+    width: 99%;
+    padding: 0;
+  }
+  .ui-widget {
+    font-size: 0.9em;
+  }
+  .ui-datepicker table {
+    font-size: 0.7em;
+  }
+}

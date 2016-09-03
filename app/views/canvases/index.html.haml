@@ -1,0 +1,27 @@
+%h1 Listing canvases
+
+%table
+  %thead
+    %tr
+      %th Canvas key
+      %th Canvas title
+      %th Canvas created
+      %th Canvas updated
+      %th
+      %th
+      %th
+
+  %tbody
+    - @canvases.each do |canvase|
+      %tr
+        %td= canvase.canvas_key
+        %td= canvase.canvas_title
+        %td= canvase.canvas_created
+        %td= canvase.canvas_updated
+        %td= link_to 'Show', canvase
+        %td= link_to 'Edit', edit_canvase_path(canvase)
+        %td= link_to 'Destroy', canvase, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Canvas', new_canvase_path
