@@ -3,8 +3,7 @@ class CanvasesController < ApplicationController
 
   # GET /canvases
   def index
-    Canvas.update_canvases
-    @canvases = Canvas.all
+    @canvases = Canvas.order(:canvas_created)
   end
 
   # GET /canvases/1
